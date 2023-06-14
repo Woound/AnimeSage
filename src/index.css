@@ -1,13 +1,101 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar,
+html {
+  background: #162432;
+}
+
+.navbar {
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-container {
+  padding-block: 0.5rem;
+}
+
+.main-img-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: #162432;
+  padding-top: 34px; /* Adjust the padding value to match the desired spacing */
+}
+
+.main-img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.scale:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide-in:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in:hover {
+  opacity: 0.7;
+}
+
+.trending-container {
+  background-color: #162432;
+  margin-top: 0; /* Adjust the margin-top value to match the desired spacing */
+  padding: 20px;
+}
+
+.trending-title,
+.popular-title {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.placeholder-image {
+  background-color: #dddddd;
+  width: 300px;
+  height: 282px; /* Adjust the height as needed */
+  margin-bottom: 1rem;
+}
+
+.popular-container {
+  background-color: #162432;
+  margin-top: 0; /* Adjust the margin-top value to match the desired spacing */
+  padding: 20px;
+}
+
+.view-more {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-more-link {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
