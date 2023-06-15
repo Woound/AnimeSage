@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Trending = ({ trending }) => {
+  // Interested in only 4 anime to display, hence slice the array till 4 (instead of pagination).
   const trendingAnime = trending.slice(0, 4).map(anime => {
     return (
       <div key={anime.id} className='col'>
