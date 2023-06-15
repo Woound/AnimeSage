@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import sage from './assets/sage img.png';
-import Header from './components/Header';
-import Trending from './components/Trending';
-import Popular from './components/Popular';
+import Home from './components/Home';
+import Search from './components/Search';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -33,20 +33,19 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <Header />
-      <main>
-        <div className='main-img-container'>
-          <img className='main-img fade-in' src={sage} alt='Main img of sage' />
-        </div>
-      </main>
-      <div className='trending-container'>
-        <Trending trending={trending} />
+    <Router>
+      <div className='App'>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <Home sage={sage} trending={trending} mostPopular={mostPopular} />
+            }
+          />
+          <Route path='/Search' element={<Search />} />
+        </Routes>
       </div>
-      <div className='popular-container'>
-        <Popular mostPopular={mostPopular} />
-      </div>
-    </div>
+    </Router>
   );
 }
 
