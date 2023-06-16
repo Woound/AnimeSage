@@ -8,7 +8,11 @@ const Home = ({ sage, trending, mostPopular }) => {
       <Header />
       <main>
         <div className='main-img-container'>
-          <img className='main-img fade-in' src={sage} alt='Main img of sage' />
+          <img
+            className='main-img img-fluid'
+            src={sage}
+            alt='Main img of sage'
+          />
         </div>
       </main>
       <div className='trending-container'>

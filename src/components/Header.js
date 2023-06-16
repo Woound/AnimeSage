@@ -7,12 +7,9 @@ const Header = () => {
   return (
     <Navbar className='navbar' expand='lg'>
       <Container className='nav-container d-flex justify-content-between align-items-center'>
-        <Navbar.Brand
-          className='nav-logo text-white fs-3 nav-logo scale'
-          href='#home'
-        >
+        <Link className='nav-logo text-white fs-3 nav-logo scale' to='/'>
           ANIMESAGE
-        </Navbar.Brand>
+        </Link>
         <Nav>
           <Link className='text-white px-5 fs-4 nav-link scale' to='/Search'>
             Search
