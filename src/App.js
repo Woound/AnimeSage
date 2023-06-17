@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import sage from './assets/sage img.png';
 import Home from './components/Home';
 import Search from './components/Search';
+import Anime from './components/Anime';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -43,6 +44,7 @@ function App() {
             }
           />
           <Route path='/Search' element={<Search />} />
+          <Route path='/anime/:id' element={<Anime />} />
         </Routes>
       </div>
     </Router>

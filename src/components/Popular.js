@@ -1,22 +1,8 @@
 import React from 'react';
+import { displayAnimeGrid } from './utils';
 
 const Popular = ({ mostPopular }) => {
-  const mostPopularAnime = mostPopular.map(anime => {
-    return (
-      <div key={anime.id} className='col'>
-        <div className='placeholder-image'>
-          <img
-            className='img-fluid img-thumbnail'
-            src={anime.attributes.posterImage.small}
-            alt='Anime poster'
-          ></img>
-        </div>
-        <div className='placeholder-title text-white'>
-          {anime.attributes.canonicalTitle}
-        </div>
-      </div>
-    );
-  });
+  const mostPopularAnime = displayAnimeGrid(mostPopular, 'col-3');
 
   return (
     <div className='container'>

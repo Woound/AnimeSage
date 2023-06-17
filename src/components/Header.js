@@ -16,7 +16,7 @@ const Header = () => {
           </Link>
           <Nav.Link
             className='text-white px-5 fs-4 nav-link slide-in'
-            href='#search'
+            href='https://github.com/Woound/AnimeSage'
           >
             About
           </Nav.Link>

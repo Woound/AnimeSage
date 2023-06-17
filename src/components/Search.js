@@ -1,13 +1,14 @@
 import axios from 'axios';
 import Header from './Header';
 import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from 'react';
+import { displayAnimeGrid } from './utils';
+import { useState } from 'react';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [queryData, setQueryData] = useState([]);
 
-  // Takes in input and updates the vlaue in the search box.
+  // Takes in input and updates the value in the search box.
   const handleQueryChange = event => {
     setSearchQuery(event.target.value.toLowerCase());
   };
@@ -24,27 +25,12 @@ const Search = () => {
         setQueryData(response.data.data);
       })
       .catch(error => {
-        console.log('An error occured', error.message);
+        console.log('An error occurred', error.message);
       });
   };
 
   // Displays the data returned from the API into a grid system.
-  const displayAnime = queryData.map(anime => {
-    return (
-      <div key={anime.id} className='col-4 mb-5'>
-        <div className='placeholder-image'>
-          <img
-            className='img-fluid img-thumbnail'
-            src={anime.attributes.posterImage.small}
-            alt='Anime poster'
-          ></img>
-        </div>
-        <div className='placeholder-title text-white '>
-          {anime.attributes.canonicalTitle}
-        </div>
-      </div>
-    );
-  });
+  const displayAnime = displayAnimeGrid(queryData, 'col-4 mb-5');
 
   return (
     <div>
@@ -55,8 +41,8 @@ const Search = () => {
             Ask and you shall receive
           </h1>
         </div>
-        <div className='search-box d-flex'>
-          <form onSubmit={searchAnime}>
+        <div className='search-box'>
+          <form onSubmit={searchAnime} className='d-flex align-items-center'>
             <input
               value={searchQuery}
               type='text'
@@ -64,7 +50,9 @@ const Search = () => {
               placeholder='Search'
               onChange={handleQueryChange}
             />
-            <Button type='submit'>Search</Button>
+            <Button type='submit' className='input w-25'>
+              Search
+            </Button>
           </form>
         </div>
       </section>
