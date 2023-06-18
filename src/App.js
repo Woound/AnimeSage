@@ -27,7 +27,7 @@ function App() {
   // Fetching popular anime from the API, with pagination.
   const getMostPopularAnime = () => {
     axios
-      .get('https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=4')
+      .get('https://kitsu.io/api/edge/anime?sort=popularityRank&page[limit]=8')
       .then(response => {
         setMostPopular(response.data.data);
       });

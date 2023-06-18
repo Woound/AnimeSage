@@ -17,7 +17,7 @@ const Anime = () => {
         <div className='poster-container'>
           <img
             src={animeData.attributes.posterImage.medium}
-            className='img-fluid'
+            className='img-fluid poster-image'
             alt='Poster img of anime'
           ></img>
           <div className='synopsis-container'>
